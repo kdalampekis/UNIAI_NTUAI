@@ -14,11 +14,11 @@ The goal is to deliver a functional MVP in 1.5 days using **Streamlit + Pydantic
 
 ## 🧩 Key Features
 
-✅ Upload and manage wardrobe items  
-✅ Recommend full outfits based on context (weather, event, preferences)  
-✅ Generate new clothes with Generative AI  
-✅ Search similar clothes online and link to stores  
-✅ 3D try-on preview with user avatar or AI rendering
+✅ Upload and manage wardrobe items using both photo and video input (for maximum ux experience).
+✅ Recommend full outfits based on context (weather, event, preferences).
+✅ Generate new clothes with Generative AI.  
+✅ Search similar clothes online and link to stores.
+✅ 3D try-on preview with user avatar or AI rendering.
 
 ---
 
@@ -120,7 +120,7 @@ All connect via `app.py` and are orchestrated with `agent_router.py`.
 - **Product search online** → image2product matching (π.χ. reverse image search για παρόμοια ρούχα σε e-shops).
 - **Favorites / collections** → διαχείριση αγαπημένων ρούχων, tags, συλλογών.
 - **3D visualization** → try-on εμπειρία, avatar του χρήστη σε ρούχα από την ντουλάπα ή γεννήτρια.
-
+- **Event Planner** → Aiding customers on preparing for events such as wedddings and business trips.
 ---
 
 ## 🚀 Τι πρέπει να υλοποιήσουμε:
@@ -154,6 +154,12 @@ All connect via `app.py` and are orchestrated with `agent_router.py`.
 - Πιο απλή υλοποίηση: DreamBooth με Stable Diffusion + εικόνες του χρήστη → να τον βάλεις σε generated outfits.  
 - Πιο advanced: 3D avatar με pose estimation & try-on (π.χ. Snap AR Lens style).
 
+**8. Event Planner**
+- Ολοκληρωμένη οργάνωση γάμων και επαγγελματικών ταξιδιών με εξατομίκευση και 24/7 concierge.
+
+- Διαφάνεια τιμών, αξιοπιστία, AI-driven συστάσεις και eco-friendly επιλογές.
+
+- Συνδρομητικά πακέτα, συνεργασίες και ανάλυση δεδομένων για αύξηση ικανοποίησης και εσόδων.
 ---
 
 **Let’s build the future of fashion together 💡**
