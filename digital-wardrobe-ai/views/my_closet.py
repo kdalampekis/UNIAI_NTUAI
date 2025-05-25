@@ -48,13 +48,18 @@ def render():
             unsafe_allow_html=True
         )
 
-    with col2:
-        st.markdown("<div style='padding-top: 16px;'>", unsafe_allow_html=True)
-        if st.button("➕ Add New Clothe"):
-            st.session_state.page = "add_clothe"
-            st.rerun()
-
-        st.markdown("</div>", unsafe_allow_html=True)
+#     with col2:
+#         st.markdown("<div style='padding-top: 16px;'>", unsafe_allow_html=True)
+#
+#         if st.button("➕ Add New Clothe"):
+#             st.session_state.page = "add_clothe"
+#             st.rerun()
+#
+#         if st.button("🧠 Plan Outfit"):   # <-- New button
+#             st.session_state.page = "outfit_chooser"
+#             st.rerun()
+#
+#         st.markdown("</div>", unsafe_allow_html=True)
 
 
 

@@ -43,13 +43,13 @@ def render():
             unsafe_allow_html=True
         )
 
-    with col2:
-        st.markdown("<div style='padding-top: 16px;'>", unsafe_allow_html=True)
-        if st.button("👕 My Closet"):
-            st.session_state.page = "my_closet"
-            st.rerun()
-
-        st.markdown("</div>", unsafe_allow_html=True)
+#     with col2:
+#         st.markdown("<div style='padding-top: 16px;'>", unsafe_allow_html=True)
+#         if st.button("👕 My Closet"):
+#             st.session_state.page = "my_closet"
+#             st.rerun()
+#
+#         st.markdown("</div>", unsafe_allow_html=True)
 
     uploaded = st.file_uploader("Upload a clothing photo", type=['jpg', 'jpeg', 'png'])
 
