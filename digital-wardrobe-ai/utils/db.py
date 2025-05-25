@@ -37,6 +37,7 @@ def init_db():
             style TEXT,
             season TEXT,
             mood TEXT,
+            tags TEXT,
             favorite INTEGER DEFAULT 0,
             date_added DATETIME DEFAULT CURRENT_TIMESTAMP,
             last_worn DATETIME,
@@ -44,32 +45,21 @@ def init_db():
             FOREIGN KEY(user_id) REFERENCES users(id)
         )
     """)
-    # Tags master table
-    c.execute("""
-        CREATE TABLE IF NOT EXISTS tags (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT UNIQUE NOT NULL
-        )
-    """)
-    # Join table for many-to-many items <-> tags
-    c.execute("""
-        CREATE TABLE IF NOT EXISTS item_tags (
-            item_id TEXT NOT NULL,
-            tag_id INTEGER NOT NULL,
-            PRIMARY KEY(item_id, tag_id),
-            FOREIGN KEY(item_id) REFERENCES wardrobe_items(id),
-            FOREIGN KEY(tag_id) REFERENCES tags(id)
-        )
-    """)
+
     conn.commit()
     conn.close()
 
 def insert_user(user: dict):
+    import bcrypt
+
+    raw_password = user['password']
+    password_hash = bcrypt.hashpw(raw_password.encode(), bcrypt.gensalt()).decode()
+
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
     c.execute("""INSERT OR IGNORE INTO users (id, username, email, password_hash)
                  VALUES (?, ?, ?, ?)""", (
-        user['id'], user['username'], user['email'], user['password_hash']
+        user['id'], user['username'], user['email'], password_hash
     ))
     conn.commit()
     conn.close()
@@ -110,3 +100,7 @@ def attach_tag_to_item(item_id: str, tag_name: str):
     c.execute("INSERT OR IGNORE INTO item_tags (item_id, tag_id) VALUES (?, ?)", (item_id, tag_id))
     conn.commit()
     conn.close()
+
+if __name__ =="__main__":
+    init_db()
+    print("Database created successfully.")
