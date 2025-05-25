@@ -8,6 +8,10 @@ from diffusers import StableDiffusionXLPipeline, ControlNetModel
 from ip_adapter import IPAdapterXL
 from controlnet_aux.open_pose import OpenposeDetector
 import open_clip
+# Load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # Set securely
 
 def generate_tryon_image(
     person_img_path: str,
@@ -73,7 +77,6 @@ def generate_tryon_image(
     return result
 
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # Set securely
 
 # === Utility: Encode image as base64
 def encode_image(image_path):
