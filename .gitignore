@@ -1,0 +1,6 @@
+__pycache__/
+.env
+data/
+*.pyc
+*.pkl
+.uni_ai/
