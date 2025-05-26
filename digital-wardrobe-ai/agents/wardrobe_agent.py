@@ -86,7 +86,7 @@ def save_item_with_metadata(
     image: Image.Image,
     user_id: str,
     metadata: dict,
-    tags: list[str] = [],
+    tags: list[str] = None,
     image_url: str = None
 ) -> dict:
     item_id = str(uuid.uuid4())[:8]
@@ -100,7 +100,6 @@ def save_item_with_metadata(
         "id": item_id,
         "user_id": user_id,
         "filename": filename,
-        "image_url": image_url,
         "type": metadata.get("type"),
         "sub_type": metadata.get("sub_type"),
         "color": metadata.get("color"),
@@ -120,7 +119,6 @@ def save_item_with_metadata(
 
     insert_item(item_record)
 
-    for tag in tags:
-        attach_tag_to_item(item_id, tag)
+
 
     return item_record

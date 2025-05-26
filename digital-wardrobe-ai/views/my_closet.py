@@ -5,6 +5,8 @@ import uuid
 import datetime
 import os
 from PIL import Image
+import os, sys
+sys.path.append(os.path.abspath(os.path.join(__file__, '..', '..')))
 from ui.components.clothe_card import display_clothe_preview
 
 

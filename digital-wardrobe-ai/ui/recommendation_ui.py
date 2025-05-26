@@ -6,7 +6,6 @@ import requests
 from PIL import Image
 import io
 
-st.set_page_config(page_title="AI Fashion Recommender", layout="wide")
 
 es = initialize()
 index_name = "digital_wardrobe"

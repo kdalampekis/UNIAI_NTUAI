@@ -121,6 +121,7 @@ def render():
                 season = st.text_input("Season", enriched.get("season", ""))
                 mood = st.text_input("Mood", enriched.get("mood", ""))
                 tags_input = st.text_input("Tags (comma separated)", "daily,favorite")
+            first_url = (st.session_state.get("image_url") or [None])[0]
 
             submitted = st.form_submit_button("💾 Save to Wardrobe")
             if submitted:
@@ -145,7 +146,7 @@ def render():
                         USER_ID,
                         metadata,
                         tags,
-                        image_url=st.session_state.get("image_url")
+                        image_url=first_url
                     )
 
                     st.success(f"✅ Saved item: {record['filename']}")

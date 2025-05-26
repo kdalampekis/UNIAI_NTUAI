@@ -1,10 +1,9 @@
-import streamlit as st
-
-import sqlite3
-import bcrypt
 
 
 DB_PATH = 'data/wardrobe.db'
+import streamlit as st
+import sqlite3
+import bcrypt
 
 def verify_user(username: str, password: str):
     conn = sqlite3.connect(DB_PATH)
@@ -32,8 +31,9 @@ def render():
 
         user_id = verify_user(username, password)
         if user_id:
+            # ← Change this to match your sidebar label exactly
             st.session_state.user_id = user_id
-            st.session_state.page = "my_closet"
+            st.session_state.page = "My Closet"
             st.success("Login successful! Redirecting...")
             st.rerun()
         else:
