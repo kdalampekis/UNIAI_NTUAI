@@ -10,6 +10,8 @@ Welcome to **Digital Wardrobe AI**, an intelligent multi-agent fashion assistant
 
 The goal is to deliver a functional MVP in 1.5 days using **Streamlit + Pydantic-based AI agents**, allowing each team member to focus on a modular component.
 
+Presentation Link: https://www.canva.com/design/DAGob36xgiQ/GDbFE8ufT7Hrmb2qbHuwag/edit
+
 ---
 
 ## 🧩 Key Features
